@@ -38,7 +38,7 @@ cube.castShadow = true
 scene.add(cube)
 
 //poner las luces
-const light1 = new THREE.SpotLight(0xfff00f, 1.5)
+const light1 = new THREE.PointLight(0xfff00f, 1.5)
 light1.castShadow = true
 light1.receiveShadow = true
 light1.shadow.bias = -0.005
@@ -46,14 +46,14 @@ light1.decay = 2
 light1.position.set(-15, 8, 0)
 
 
-const light2 = new THREE.SpotLight(0x5034cf, 1.5)
+const light2 = new THREE.PointLight(0x5034cf, 1.5)
 light2.castShadow = true
 light2.receiveShadow = true
 light2.shadow.bias = -0.005
 light2.decay = 2
 light2.position.set(15, 8, 0)
 
-const light3 = new THREE.SpotLight(0x61f277, 1.7)
+const light3 = new THREE.PointLight(0x61f277, 1.7)
 light3.castShadow = true
 light3.receiveShadow = true
 light3.shadow.bias = -0.005
