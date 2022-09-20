@@ -27,9 +27,19 @@ mesh.receiveShadow = true
 scene.add(mesh);
 
 //añadir los cubos
+const geometry = new THREE.BoxGeometry(5, 5, 5)
+const material = new THREE.MeshLambertMaterial({}) //añadir el color
+
+const cube01 = new THREE.Mesh(geometry, material)
+cube01.position.set(0, 2.51, -10)
+const cube02 = new THREE.Mesh(geometry, material)
+cube02.position.set(0, 2.51, 10)
+//TODO: añadir las texturas a los cubos
 
 
 
+scene.add(cube01)
+scene.add(cube02)
 //añadir una luz para que se vea la escena
 const light = new THREE.AmbientLight(0xffffff, 1)
 scene.add(light)
