@@ -27,7 +27,6 @@ mesh.receiveShadow = true
 scene.add(mesh);
 
 //añadir los cubos
-//TODO: añadir las texturas a los cubos
 const texture01 = new THREE.TextureLoader().load("img/shrek_texture.jpeg")
 const material01 = new THREE.MeshLambertMaterial({
     map: texture01,
@@ -49,15 +48,12 @@ cube01.position.set(0, 12.51, -10)
 const cube02 = new THREE.Mesh(geometry, material02)
 cube02.position.set(0, 12.51, 10)
 
-
-
-//añadir el color
-
-
 scene.add(cube01)
 scene.add(cube02)
+
 //añadir una luz para que se vea la escena
-const light = new THREE.AmbientLight(0xffffff, 1)
+const light = new THREE.SpotLight(0xffffff, 1.5)
+light.position.set(40, 50, 0)
 scene.add(light)
 
 //creacion de la escena
