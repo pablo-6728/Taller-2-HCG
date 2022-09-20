@@ -1,6 +1,7 @@
 import * as THREE from 'three';
 import {OrbitControls} from './jsm/controls/OrbitControls.js'
 import Stats from './jsm/libs/stats.module.js'
+import { GUI } from './jsm/libs/lil-gui.module.min.js'
 
 //crear un espacio donde hayan 2 figuras y cada una tiene distintas texturas
 const scene = new THREE.Scene()
@@ -67,6 +68,13 @@ window.addEventListener(
     },
     false
 )
+
+//agregar un gui para mover las luces
+const gui = new GUI()
+const lightFolder = gui.addFolder('Luz')
+lightFolder.add(light.position, 'y', 0, 80)
+lightFolder.open()
+
 
 const stats = Stats()
 document.body.appendChild(stats.dom)
