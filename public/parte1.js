@@ -1,6 +1,7 @@
 import * as THREE from 'three';
 import {OrbitControls} from './jsm/controls/OrbitControls.js'
 import Stats from './jsm/libs/stats.module.js'
+import { GUI } from './jsm/libs/lil-gui.module.min.js'
 
 //crear un espacio donde haya una figura y 3 luces que le peguen de distintas fuentes
 const scene = new THREE.Scene()
@@ -80,6 +81,27 @@ window.addEventListener(
 
 const stats = Stats()
 document.body.appendChild(stats.dom)
+
+//añadir un gui para mover las luces
+const gui = new GUI()
+const light01Folder = gui.addFolder('Luz 1')
+light01Folder.add(light1.position, 'x', -50, 50)
+light01Folder.add(light1.position, 'y', 0, 50)
+light01Folder.add(light1.position, 'z', -50, 50)
+light01Folder.open()
+
+const light02Folder = gui.addFolder('Luz 2')
+light02Folder.add(light2.position, 'x', -50, 50)
+light02Folder.add(light2.position, 'y', 0, 50)
+light02Folder.add(light2.position, 'z', -50, 50)
+light02Folder.open()
+
+const light03Folder = gui.addFolder('Luz 3')
+light03Folder.add(light3.position, 'x', -50, 50)
+light03Folder.add(light3.position, 'y', 0, 50)
+light03Folder.add(light3.position, 'z', -50, 50)
+light03Folder.open()
+
 
 function animate(){
     requestAnimationFrame(animate)
